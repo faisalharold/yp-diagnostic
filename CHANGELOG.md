@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2025-01-01
 
+**Initial diagnostic release.**
+
+> **No guarantees of applicability.** This package provides a diagnostic coordinate only. It does not predict, model, or validate system behavior. Any real-world application requires independent domain-specific validation.
+
+> **Breaking changes require v2.0.0.** Per semantic versioning, any changes to the public API that break backward compatibility will increment the major version.
+
 ### Added
 
 - Core diagnostic coordinate computation (`compute_x_y`)

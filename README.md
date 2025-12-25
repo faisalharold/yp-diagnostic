@@ -76,6 +76,8 @@ The coordinate y(p) = (1 - p2/p1)^(-1/2) **indicates** when a ratio-based metric
 
 **What this does NOT indicate:** Causation, prediction of failure, mechanism of transition, or universality of behavior.
 
+> **This is a diagnostic coordinate, not a mechanistic model.** It does not predict system behavior. Any application to real systems requires independent, domain-specific validation.
+
 ---
 
 ## When NOT to use this package
