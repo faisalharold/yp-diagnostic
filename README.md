@@ -125,6 +125,7 @@ If you use this package, please cite:
 @software{yp_diagnostic,
   author = {Harold, Faisal},
   title = {A Diagnostic Coordinate for Finite Systems Near Capacity Thresholds},
+  version = {1.0.0},
   year = {2025},
   url = {https://github.com/faisalharold/yp-diagnostic}
 }
