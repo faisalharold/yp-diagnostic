@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "A Diagnostic Coordinate for Finite Systems Near Capacity Thresholds"
+authors:
+  - family-names: "Harold"
+    given-names: "Faisal"
+version: "1.0.0"
+date-released: "2025-01-01"
+url: "https://github.com/faisalharold/yp-diagnostic"
+repository-code: "https://github.com/faisalharold/yp-diagnostic"
+license: MIT
+keywords:
+  - diagnostic
+  - capacity
+  - threshold
+  - monitoring
+abstract: >-
+  A diagnostic coordinate for finite systems near capacity thresholds.
+  Computes y(p) = (1 - p2/p1)^(-1/2) to flag when ratio-based metrics
+  approach unity. This is a diagnostic tool only; it does not infer,
+  predict, or model system behavior.
