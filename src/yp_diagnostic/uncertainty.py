@@ -11,6 +11,7 @@ INTERPRETATION WARNING:
     They do NOT account for model misspecification or systematic errors.
 """
 
+import warnings
 from typing import Dict, Optional, Tuple, Union
 
 import numpy as np
@@ -87,6 +88,16 @@ def bootstrap_ci(
     >>> print(f"y = {result['y_mean']:.3f}, 95% CI: {result['y_ci']}")
     """
     rng = np.random.default_rng(random_state)
+
+    # Warn if bootstrap sample count may be insufficient
+    # Why: Too few samples can lead to unstable confidence intervals
+    if n_boot < 1000:
+        warnings.warn(
+            f"n_boot={n_boot} may be insufficient for stable confidence intervals. "
+            f"Consider n_boot >= 1000 (default is 2000) for reliable estimates.",
+            UserWarning,
+            stacklevel=2,
+        )
 
     p1_arr = np.asarray(p1)
     p2_arr = np.asarray(p2)
@@ -233,6 +244,19 @@ def delta_method_ci(
 
     # Compute x = p2 / p1
     x = p2 / p1
+
+    # Warn about accuracy degradation in high-x regime
+    # Why: The nonlinearity of (1-x)^(-1/2) increases as x approaches 1,
+    # making the first-order Taylor approximation less accurate
+    if x > 0.9:
+        warnings.warn(
+            f"x = {x:.3f} > 0.9: Delta method accuracy degrades as x approaches 1. "
+            f"The first-order Taylor approximation becomes less reliable in the "
+            f"high-x regime. Consider using bootstrap_ci for more robust uncertainty "
+            f"estimates when x > 0.9.",
+            UserWarning,
+            stacklevel=2,
+        )
 
     # Compute variance of x using delta method
     # For x = p2/p1:
