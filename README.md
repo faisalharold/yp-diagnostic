@@ -2,6 +2,8 @@
 
 A diagnostic coordinate for finite systems near capacity thresholds.
 
+**Intended Audience:** Intended for researchers and practitioners performing population-level inference on finite systems with absorbing failure, who need to assess whether rate-based summaries remain interpretable.
+
 > ⚠️ **CRITICAL**: This is a **diagnostic tool**, not a predictive model or physical law.
 >
 > The coordinate y(p) = (1 - p₂/p₁)^(-1/2) is a mathematical reparameterization
